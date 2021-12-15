@@ -4,11 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Weather Dashboard</title>
 </head>
 <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <div class="mdl-layout-spacer">
+        <span class="mdl-layout-title">Weather Dashboard</span>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Search for a City:</span>
+        <form id="search-form">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="city-input">
+            <label class="mdl-textfield__label" for="city-input">Enter city name</label>
+            </div>
+            <button id="search-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-block">
+                Search
+            </button>
+        </form>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Austin</a>
+      <a class="mdl-navigation__link" href="">Chicago</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <!-- Main weather area -->
+        <div class="mdl-grid">
+            <div class=" mdl-card mdl-shadow--2dp mdl-cell mdl-cell--10-col">
+                <div class="mdl-card__title">
+                <span id="city-name" class="mdl-card__title-text"></span>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <p id="temperature"></p>
+                    <p id="wind-speed"></p>
+                    <p id="humidity"></p>                    
+                    <p id="UV-index"></p>
+                </div>
+            </div>
+        </div>
+        <!-- 5- Day Forecast -->
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+        </div>       
+            
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </main>
+</div>
     
 </body>
 </html>
