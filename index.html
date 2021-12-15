@@ -32,9 +32,7 @@
                 Search
             </button>
         </form>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Austin</a>
-      <a class="mdl-navigation__link" href="">Chicago</a>
+    <nav id="recent-search" class="mdl-navigation">
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -43,7 +41,7 @@
         <div class="mdl-grid">
             <div class=" mdl-card mdl-shadow--2dp mdl-cell mdl-cell--10-col">
                 <div class="mdl-card__title">
-                <span id="city-name" class="mdl-card__title-text"></span>
+                  <span id="city-name" class="mdl-card__title-text"></span>
                 </div>
                 <div class="mdl-card__supporting-text">
                     <p id="temperature"></p>
@@ -53,13 +51,8 @@
                 </div>
             </div>
         </div>
-        <!-- 5- Day Forecast -->
-            <div class="mdl-grid">
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
-                <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast "></div>
+        <!-- 5-Day Forecast -->
+        <div id="five-day-forecast" class="mdl-grid">
         </div>       
             
     </div>

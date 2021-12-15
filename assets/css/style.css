@@ -1,3 +1,11 @@
 .btn-block {
     width: 100%;
 }
+
+.mdl-card__subtitle-text {
+    font-weight: 700;
+}
+
+.forecast {
+    background-color: rgb(3,169,244);
+}
