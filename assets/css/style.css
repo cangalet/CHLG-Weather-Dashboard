@@ -9,3 +9,11 @@
 .forecast {
     background-color: rgb(3,169,244);
 }
+
+.mdl-textfield__label {
+    padding: 0px 10px;
+}
+
+.mdl-textfield {
+    padding: 20px 10px;
+}

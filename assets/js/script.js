@@ -75,9 +75,10 @@ var getCityWeather = function(data,city) {
 
 // Displays current weather inside Main Weather area on page
 var displayCurrentWeather = function(data, city) {
+    var date = formatDate(data.current.dt);
     var icon = data.current.weather[0].icon;
     var cityNameEl = document.querySelector('#city-name');
-    cityNameEl.innerHTML = city + `<img src="https://openweathermap.org/img/wn/${icon}.png"></img>`;
+    cityNameEl.innerHTML = city + " (" + date + ") " + `<img src="https://openweathermap.org/img/wn/${icon}.png"></img>`;
     currentTempEl.textContent = "Temp:" + data.current.temp;
     currentWindEl.textContent = "Wind:" + data.current.wind_speed;
     currentHumidityEl.textContent = "Humidity:" + data.current.humidity;
