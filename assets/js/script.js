@@ -17,7 +17,9 @@ var formSubmitHandler = function(event) {
 
     var city = inputEl.value.trim();
     console.log(city);
+
     getCityCoord(city);
+
     searchHistory.push(city);
     localStorage.setItem("search",JSON.stringify(searchHistory));
     recentSearchHistory();
@@ -65,6 +67,10 @@ var getCityWeather = function(data,city) {
           console.log(data);
           
           displayCurrentWeather(data, city);
+
+          // Show Current Weather container
+          var weatherDisplayEl = document.getElementById("weather-display");
+          weatherDisplayEl.classList.add("activeWeatherDisplay");
           displayForecast(data);        
       });
     } else {
@@ -87,12 +93,13 @@ var displayCurrentWeather = function(data, city) {
 
 var displayForecast = function(data) {
 
-  // var forecastTitleEl = document.createElement("div");
-  // forecastTitleEl.innerHTML = `
-  // <div class="mdl-card__title">
-  //   <span id="city-name" class="mdl-card__title-text">5 Day Forecast:</span>
-  // </div>`
-  // forecastTitleEl.appendChild(forecastContainerEl);
+  var forecastTitleEl = document.querySelector('#forecast-container')
+  forecastTitleEl.innerHTML = `
+    <div class="mdl-card__title">
+      <span id="city-name" class="mdl-card__title-text">5 Day Forecast:</span>
+    </div>
+    `
+  
   var forecastCardEl = document.querySelector('#five-day-forecast')
   forecastCardEl.innerHTML = "";
 
@@ -104,20 +111,19 @@ var displayForecast = function(data) {
     var humidity = data.daily[i].humidity;
   
     forecastCardEl.innerHTML += `
-    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast ">
-      <div class="mdl-card__title">
-        <span class="mdl-card__subtitle-text">${date}</span>
+      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col forecast ">
+        <div class="mdl-card__title">
+          <span class="mdl-card__subtitle-text">${date}</span>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <img src="https://openweathermap.org/img/wn/${icon}@2x.png"></img>
+          <p>Temp: ${temp}</p>
+          <p>Wind: ${wind}</p>
+          <p>Humidity: ${humidity}</p>
+        </div>
       </div>
-      <div class="mdl-card__supporting-text">
-        <img src="https://openweathermap.org/img/wn/${icon}@2x.png"></img>
-        <p>Temp: ${temp}</p>
-        <p>Wind: ${wind}</p>
-        <p>Humidity: ${humidity}</p>
-      </div>
-    </div>
-    `
-  
-  }; 
+      `
+    }; 
 
 };
 

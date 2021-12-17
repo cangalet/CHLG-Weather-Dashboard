@@ -10,10 +10,11 @@
     background-color: rgb(3,169,244);
 }
 
-.mdl-textfield__label {
-    padding: 0px 10px;
+/* Actions */
+.weather-display.activeWeatherDisplay {
+    opacity: 1;
 }
 
-.mdl-textfield {
-    padding: 20px 10px;
+.weather-display {
+    opacity: 0;
 }

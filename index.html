@@ -38,7 +38,7 @@
   <main class="mdl-layout__content">
     <div class="page-content">
         <!-- Main weather area -->
-        <div class="mdl-grid">
+        <div id="weather-display" class="mdl-grid weather-display">
             <div class=" mdl-card mdl-shadow--2dp mdl-cell mdl-cell--10-col">
                 <div class="mdl-card__title">
                   <span id="city-name" class="mdl-card__title-text"></span>
@@ -52,7 +52,10 @@
             </div>
         </div>
         <!-- 5-Day Forecast -->
+        <div id="forecast-container" class="mdl-grid">
+        </div>  
         <div id="five-day-forecast" class="mdl-grid">
+            
         </div>       
             
     </div>
