@@ -2,6 +2,19 @@
     width: 100%;
 }
 
+form {
+    padding: 0 15px 0 15px;
+}
+
+.mdl-card__title {
+    padding: 16px 16px 0 16px;
+}
+
+.mdl-card__title-text{
+    align-items: center;
+}
+
+
 .mdl-card__subtitle-text {
     font-weight: 700;
 }
@@ -18,3 +31,24 @@
 .weather-display {
     opacity: 0;
 }
+
+.mdl-badge[data-badge]:after {
+    top: -2px;
+    right: -45px;
+    width: 40px;
+    border-radius: 0%;
+}
+
+.favorable[data-badge]:after {
+    background: #72cc50;
+}
+
+.moderate[data-badge]:after {
+    background: #F7AD19;
+    color: black;
+}
+
+.severe[data-badge]:after {
+    background: #b8293d;
+}
+

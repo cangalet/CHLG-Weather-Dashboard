@@ -84,11 +84,22 @@ var displayCurrentWeather = function(data, city) {
     var date = formatDate(data.current.dt);
     var icon = data.current.weather[0].icon;
     var cityNameEl = document.querySelector('#city-name');
+    var cityUVi = data.current.uvi;
+
     cityNameEl.innerHTML = city + " (" + date + ") " + `<img src="https://openweathermap.org/img/wn/${icon}.png"></img>`;
     currentTempEl.textContent = "Temp:" + data.current.temp;
     currentWindEl.textContent = "Wind:" + data.current.wind_speed;
     currentHumidityEl.textContent = "Humidity:" + data.current.humidity;
-    currentUVEl.textContent = "UV Index:" + data.current.uvi;
+    currentUVEl.innerHTML = `UV Index: <span id="uv-Val" class="mdl-badge" data-badge="${cityUVi}"></span>`;
+    var uvConditionEl = document.getElementById("uv-Val");
+    
+    if (cityUVi>=0 && cityUVi<3){ 
+      uvConditionEl.classList.add("favorable");
+    } else if (cityUVi>=3 && cityUVi<8){
+      uvConditionEl.classList.add("moderate");
+    } else if (cityUVi>=8){
+      uvConditionEl.classList.add("severe");
+    }
 };
 
 var displayForecast = function(data) {
