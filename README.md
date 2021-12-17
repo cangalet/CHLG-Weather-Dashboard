@@ -11,4 +11,4 @@ A web app that uses OpenWeather API to view the current weather of your city sea
 
 ## Links
 
-Live Link: https://cangalet.github.io/CHLG-Work-Day-Scheduler/
+Live Link: https://cangalet.github.io/CHLG-Weather-Dashboard/
